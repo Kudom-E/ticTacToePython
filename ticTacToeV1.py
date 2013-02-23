@@ -1,4 +1,3 @@
-
 from random import choice
 playerX = "player X"
 playerO = "player O"
@@ -34,7 +33,6 @@ def make_move(current_player):
     # return board_marker
      player_marks = {playerX : 'X', playerO : 'O'} #dictionary 
      return player_marks[current_player] #current player is the "index" that is equal to either playerX or playerO
-
 
 def verify_numerical_selection_for_move(user_move_input):
     #if not (str.isdigit(user_move_input)): #class method
@@ -87,7 +85,7 @@ def handle_next_move(current_player, next_player):
         print "That was an illegal move, let's try again..."
         handle_next_move(current_player, next_player)
 
-def play_game(current_player, current_board, second_player):
+def play_game(current_player, next_player, current_board):
     #first time through
     display_board(current_board) 
     move_selection = raw_input ("Ok, %s, make your first move by selecting a number on the board \nto move to. \n" %current_player)
@@ -96,7 +94,7 @@ def play_game(current_player, current_board, second_player):
     display_board(current_board)
 
     #subsequent moves
-    handle_next_move(get_next_player(current_player, second_player), second_player)    
+    handle_next_move(get_next_player(current_player, next_player), next_player)    
 
 def display_board(current_board):
     # board = []
@@ -119,7 +117,7 @@ def display_board(current_board):
 first_player = welcome_to_new_game(playerX, playerO) 
 second_player = determine_second_player_identity(first_player)
 game_board_in_play = ["0", "1", "2", "3", "4", "5", "6", "7", "8"] 
-play_game(first_player, game_board_in_play, second_player)
+play_game(first_player, second_player, game_board_in_play) 
 
 
 
