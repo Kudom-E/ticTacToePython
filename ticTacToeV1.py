@@ -27,14 +27,18 @@ def determine_second_player_identity(first_player):
     return second_player
 
 def make_move(current_player):
-    if current_player == playerX:
-        board_marker = "X"
-    else:
-        board_marker = "O"
-    return board_marker
+    # if current_player == playerX:
+    #     board_marker = "X"
+    # else:
+    #     board_marker = "O"
+    # return board_marker
+     player_marks = {playerX : 'X', playerO : 'O'} #dictionary 
+     return player_marks[current_player] #current player is the "index" that is equal to either playerX or playerO
+
 
 def verify_numerical_selection_for_move(user_move_input):
-    if not (str.isdigit(user_move_input)):
+    #if not (str.isdigit(user_move_input)): #class method
+    if not user_move_input.isdigit(): #instance method
         user_move_input = raw_input("Please enter a valid number!\n")
         return verify_numerical_selection_for_move(user_move_input)
     user_move_input = int(user_move_input)
@@ -45,14 +49,16 @@ def verify_numerical_selection_for_move(user_move_input):
         return user_move_input
 
 def legal_move(current_board, current_move_selection):
-    if current_board[current_move_selection] == "X" or current_board[current_move_selection] == "O":
-        return False
-    else:
-        return True
+    # if current_board[current_move_selection] == "X" or current_board[current_move_selection] == "O":
+    #     return False
+    # else:
+    #     return True
+    return current_board[current_move_selection].isdigit()
 
 def game_over(current_board):
     for item in current_board:
-        if (str.isdigit(item)):
+        #if (str.isdigit(item)): #class method
+        if item.isdigit(): #instance method
             return False
     return True
 
@@ -93,13 +99,15 @@ def play_game(current_player, current_board, second_player):
     handle_next_move(get_next_player(current_player, second_player), second_player)    
 
 def display_board(current_board):
-    board = []
+    # board = []
     
-    for item in current_board: 
-        if item is None:
-            board.append(" ")
-        else: 
-            board.append(item)
+    # for item in current_board: 
+    #     if item is None:
+    #         board.append(" ")
+    #     else: 
+    #         board.append(item)
+
+    board = [x if x is not None else " " for x in current_board] #what is this syntax?
     
     print " {} | {} | {} ".format(board[0], board[1], board[2]) #using a format string, append the print statements with the new contents of board
     print "---+---+---"
