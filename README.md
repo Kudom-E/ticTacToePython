@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Kudom-E/ticTacToePython.svg?branch=master)](https://travis-ci.com/Kudom-E/ticTacToePython)
+
 
 The ticTacToePython code was forked from ![HERE](jac300/ticTacToePython)
 It is a python console app game of Tic-Tac-Toe
