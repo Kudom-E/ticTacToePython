@@ -1,5 +1,5 @@
 
-The ticTacToePython code was forked from ![](jac300/ticTacToePython)
+The ticTacToePython code was forked from ![HERE](jac300/ticTacToePython)
 It is a python console app game of Tic-Tac-Toe
 
 The code failed 8 test;
