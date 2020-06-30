@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/Kudom-E/ticTacToePython.svg?branch=master)](https://travis-ci.com/Kudom-E/ticTacToePython)
+![Build Status](https://travis-ci.com/Kudom-E/ticTacToePython.svg?branch=master)
 
 
 The ticTacToePython code was forked from ![HERE](jac300/ticTacToePython)
